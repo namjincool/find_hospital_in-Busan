@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = sample
 build_property.RootNamespace = sample
-build_property.ProjectDir = c:\Users\n9911\sample\
+build_property.ProjectDir = C:\Users\n9911\sample\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\n9911\sample
+build_property.MSBuildProjectDirectory = C:\Users\n9911\sample
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/n9911/sample/Views/Home/Index.cshtml]
+[C:/Users/n9911/sample/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/Home/Privacy.cshtml]
+[C:/Users/n9911/sample/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/Shared/Error.cshtml]
+[C:/Users/n9911/sample/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/n9911/sample/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/_ViewImports.cshtml]
+[C:/Users/n9911/sample/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/_ViewStart.cshtml]
+[C:/Users/n9911/sample/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/n9911/sample/Views/Shared/_Layout.cshtml]
+[C:/Users/n9911/sample/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0cn7gkqn4y
