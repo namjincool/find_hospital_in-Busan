@@ -1,0 +1,7 @@
+C:\Users\n9911\sample\bin\Release\net7.0\publish\sample.exe
+C:\Users\n9911\sample\bin\Release\net7.0\publish\appsettings.Development.json
+C:\Users\n9911\sample\bin\Release\net7.0\publish\appsettings.json
+C:\Users\n9911\sample\bin\Release\net7.0\publish\sample.dll
+C:\Users\n9911\sample\bin\Release\net7.0\publish\sample.deps.json
+C:\Users\n9911\sample\bin\Release\net7.0\publish\sample.runtimeconfig.json
+C:\Users\n9911\sample\bin\Release\net7.0\publish\sample.pdb
