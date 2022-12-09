@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-}
-!DOCTYPE html>
+} 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,6 +9,7 @@
     <title>Document</title>
   </head>
   <body>
+    <h1 style="text-align: center;">부산시 병원 및 약국 위치</h1>
     <div id="map" style="width:1400px;height:600px;"></div>
     <script
       type="text/javascript"
@@ -19,14 +19,14 @@
       const url =
         'https://apis.data.go.kr/6260000/MedicInstitService/MedicalInstitInfo?serviceKey=f0iphuLGFLeTKFPvNQ%2F06c79PlnJ6XuTGw1iEzrajf7AD7dZIhJboektJtczaQGU00ceR4Xzir5LZIeDzWObgQ%3D%3D&pageNo=1&numOfRows=6894&resultType=json';
 
-      // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
+      // 인포윈도우를 표시하는 클로저를 만드는 함수
       function makeOverListener(map, marker, infowindow) {
         return function () {
           infowindow.open(map, marker);
         };
       }
 
-      // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+      // 인포윈도우를 닫는 클로저를 만드는 함수
       function makeOutListener(infowindow) {
         return function () {
           infowindow.close();
