@@ -17,7 +17,7 @@
     ></script>
     <script>
       const url =
-        'https://apis.data.go.kr/6260000/MedicInstitService/MedicalInstitInfo?serviceKey=f0iphuLGFLeTKFPvNQ%2F06c79PlnJ6XuTGw1iEzrajf7AD7dZIhJboektJtczaQGU00ceR4Xzir5LZIeDzWObgQ%3D%3D&pageNo=1&numOfRows=6894&resultType=json';
+        'https://apis.data.go.kr/6260000/MedicInstitService/MedicalInstitInfo?serviceKey=f0iphuLGFLeTKFPvNQ%2F06c79PlnJ6XuTGw1iEzrajf7AD7dZIhJboektJtczaQGU00ceR4Xzir5LZIeDzWObgQ%3D%3D&pageNo=1&numOfRows=1000&resultType=json';
 
       // 인포윈도우를 표시하는 클로저를 만드는 함수
       function makeOverListener(map, marker, infowindow) {
@@ -52,17 +52,66 @@
         .then((myJson) => {
           var markers = [];
           const stores = myJson.MedicalInstitInfo.body.items.item;
-          console.log(JSON.stringify(myJson, null, 1));
+          @* console.log(JSON.stringify(myJson, null, 1));
 
-          console.log(stores);
+          console.log(stores); *@
+          let today=new Date();
+          let day=today.getDay(); //0 :일  ~ 6 : 토
+          let current_time=today.getHours()+":"+today.getMinutes()//시:분
+          var value;
+          function getTimefun(val) {
+            var to_get_day_time;
+            switch (val){
+            case 0: 
+              to_get_day_time = stores[i]["Sunday"];
+              break; 
+            case 1:
+              to_get_day_time = stores[i]["Monday"];
+              break;
+            case 2:
+              to_get_day_time = stores[i]["Tuesday"]; 
+              break;
+            case 3:
+              to_get_day_time = stores[i]["Wednesday"]; 
+              break;
+            case 4:
+              to_get_day_time = stores[i]["Thursday"]; 
+              break;
+            case 5:
+              to_get_day_time = stores[i]["Friday"]; 
+              break; 
+            case 6:
+              to_get_day_time = stores[i]["Saturday"]; 
+              break;
+          }
+          return to_get_day_time;
+        }
+          function checkTime(val) {
+            var check_time=val.split('~');//10:00,21:00
+            if (check_time[0].split(':')[0]==null || check_time[0].split(':')[0]==0){
+              value="CLOSE"
+            } else if (current_time.split(':')[0]>check_time[0].split(':')[0] && current_time.split(':')[0]<check_time[1].split(':')[0]){
+              value="OPEN"
+            } else if (current_time.split(':')[0]==check_time[0].split(':')[0]){
+              value=current_time.split(':')[1]>check_time[0].split(':')[1]?"OPEN":"CLOSE";
+            } else if (current_time.split(':')[0]==check_time[1].split(':')[0]){
+              value=current_time.split(':')[1]<check_time[1].split(':')[1]?"OPEN":"CLOSE";
+            }
+          
+          return value;
+          }
           for (var i = 0; i < stores.length; i++) {
             var marker = new kakao.maps.Marker({
               position: new kakao.maps.LatLng(stores[i]["lat"], stores[i]["lng"]),
               map: map,
             });
+          
+
+            checkTime(getTimefun(day));
+            var iwContent = stores[i]["instit_nm"]+'<br>'+value;
 
             var infowindow = new kakao.maps.InfoWindow({
-              content: stores[i]["instit_nm"],
+              content: iwContent
             });
 
             markers.push(marker);
