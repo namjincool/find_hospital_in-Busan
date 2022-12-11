@@ -88,14 +88,16 @@
         }
           function checkTime(val) {
             var check_time=val.split('~');//10:00,21:00
-            if (check_time[0].split(':')[0]==null || check_time[0].split(':')[0]==0){
+            if (parseInt(check_time[0].split(':')[0])==null || parseInt(check_time[0].split(':')[0])==0){
               value="CLOSE"
-            } else if (current_time.split(':')[0]>check_time[0].split(':')[0] && current_time.split(':')[0]<check_time[1].split(':')[0]){
+            } else if (parseInt(current_time.split(':')[0])>parseInt(check_time[0].split(':')[0]) && parseInt(current_time.split(':')[0])<parseInt(check_time[1].split(':')[0])){
               value="OPEN"
-            } else if (current_time.split(':')[0]==check_time[0].split(':')[0]){
+            } else if (parseInt(current_time.split(':')[0])==parseInt(check_time[0].split(':')[0])){
               value=current_time.split(':')[1]>check_time[0].split(':')[1]?"OPEN":"CLOSE";
-            } else if (current_time.split(':')[0]==check_time[1].split(':')[0]){
+            } else if (parseInt(current_time.split(':')[0])==parseInt(check_time[1].split(':')[0])){
               value=current_time.split(':')[1]<check_time[1].split(':')[1]?"OPEN":"CLOSE";
+            } else {
+              value="CLOSE";
             }
           
           return value;
@@ -120,7 +122,7 @@
             kakao.maps.event.addListener(marker, "mouseout", makeOutListener(infowindow));
           }
 
-          clusterer.addMarkers(markers);
+          clustererjm .addMarkers(markers);
         });
     </script>
   </body>
