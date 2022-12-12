@@ -17,7 +17,7 @@
     ></script>
     <script>
       const url =
-        'https://apis.data.go.kr/6260000/MedicInstitService/MedicalInstitInfo?serviceKey=f0iphuLGFLeTKFPvNQ%2F06c79PlnJ6XuTGw1iEzrajf7AD7dZIhJboektJtczaQGU00ceR4Xzir5LZIeDzWObgQ%3D%3D&pageNo=1&numOfRows=1000&resultType=json';
+        'https://apis.data.go.kr/6260000/MedicInstitService/MedicalInstitInfo?serviceKey=f0iphuLGFLeTKFPvNQ%2F06c79PlnJ6XuTGw1iEzrajf7AD7dZIhJboektJtczaQGU00ceR4Xzir5LZIeDzWObgQ%3D%3D&pageNo=1&numOfRows=2000&resultType=json';
 
       // 인포윈도우를 표시하는 클로저를 만드는 함수
       function makeOverListener(map, marker, infowindow) {
@@ -59,6 +59,7 @@
           let day=today.getDay(); //0 :일  ~ 6 : 토
           let current_time=today.getHours()+":"+today.getMinutes()//시:분
           var value;
+          
           function getTimefun(val) {
             var to_get_day_time;
             switch (val){
@@ -107,10 +108,9 @@
               position: new kakao.maps.LatLng(stores[i]["lat"], stores[i]["lng"]),
               map: map,
             });
-          
 
             checkTime(getTimefun(day));
-            var iwContent = stores[i]["instit_nm"]+'<br>'+value;
+            var iwContent = stores[i]["instit_nm"]+'<br>'+value+'<br>'+'주변 교통수단 ->'+stores[i]["organ_loc"]+'<br>';
 
             var infowindow = new kakao.maps.InfoWindow({
               content: iwContent
@@ -122,7 +122,7 @@
             kakao.maps.event.addListener(marker, "mouseout", makeOutListener(infowindow));
           }
 
-          clusterer .addMarkers(markers);
+          clusterer.addMarkers(markers);
         });
     </script>
   </body>
